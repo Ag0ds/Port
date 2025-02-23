@@ -1,0 +1,27 @@
+.BtnGithub, .BtnGoogle {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o ícone e o texto */
+    padding: 10px 20px;
+    font-size: 26px;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .BtnGithub:hover, .BtnGoogle:hover {
+    background-color: rgb(51, 0, 255);
+  }
+  
+
+
+.BtnAuth{
+    justify-content: center;
+    display: flex; /* Ativa o Flexbox */
+    gap: 16px; /* Espaço entre os itens */
+      }
+
