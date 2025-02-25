@@ -9,12 +9,12 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
     margin-top: 10px;
   }
   
   .BtnGithub:hover, .BtnGoogle:hover {
-    background-color: rgb(51, 0, 255);
+    background-color: green;
   }
   
 

@@ -67,7 +67,7 @@ body {
 
 .input-box input:focus,
 .input-box input:valid {
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid green;
 }
 
 .input-box label {
@@ -83,7 +83,7 @@ body {
 .input-box input:focus~label,
 .input-box input:valid~label {
     top: -5px;
-    color: red;
+    color: green;
 }
 
 .input-box i {
@@ -97,7 +97,7 @@ body {
 
 .input-box input:focus~i,
 .input-box input:valid~i {
-    color: red;
+    color: green;
 }
 
 .btn {
@@ -129,6 +129,7 @@ body {
 
 .btn:hover::before {
     top: 0;
+    background: linear-gradient(#25252b, green, #25252b, green);
 }
 
 .regi-link {
@@ -145,6 +146,7 @@ body {
 
 .regi-link a:hover {
     text-decoration: underline;
+    color: green;
 }
 
 .info-content {
@@ -183,7 +185,7 @@ body {
     display: none; /* Removido para dispositivos móveis */
 }
 
-/* Media Queries para responsividade */
+
 @media (min-width: 768px) {
     .container {
         height: 450px;

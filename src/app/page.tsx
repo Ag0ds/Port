@@ -1,7 +1,17 @@
 import { LoginBtn } from "../components/LoginBtn";
 import "./page.css";
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession();
+
+  // Se o usuário ESTIVER autenticado, redirecione para o dashboard
+  if (session) {
+    redirect('/dashboard');
+  }
+
+
   return (
     <div className="container">
       <div className="curved-shape"></div>
@@ -17,7 +27,7 @@ export default function Home() {
           <div className="input-box">
             <input type="text" required />
             <label htmlFor="">Senha</label>
-            <i className="bx bxs-user"></i>
+            <i className='bx bxs-lock-alt'></i>
           </div>
           <div className="input-box">
             <button className="btn" type="submit">Entrar</button>
