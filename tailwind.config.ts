@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'minha-cor': '#ff0000',
+        'minha-verde': '#008000',
       },
     },
   },

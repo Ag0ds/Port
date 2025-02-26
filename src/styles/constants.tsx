@@ -25,12 +25,12 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     icon: <Icon icon="lucide:mail" width="24" height="24" />,
   },
   {
-    title: 'Configurações',
+    title: 'Config',
     path: '/settings',
     icon: <Icon icon="lucide:settings" width="24" height="24" />,
     submenu: true,
     subMenuItems: [
-      { title: 'Conta', path: '/account' },
+      { title: 'Conta', path: '/settings/account' },
       { title: 'Privacy', path: '/settings/privacy' },
     ],
   },

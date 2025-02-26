@@ -16,9 +16,7 @@ export default async function page() {
 
     return(
         <div>
-            <h1>Olá {session.user?.name}</h1>
             <LogOutBtn/>
-            {session.user?.image && <div className="w-[150px]"><Image src={session.user?.image} alt="Avatar" width={150} height={150}/></div>}
         </div>
             
     )

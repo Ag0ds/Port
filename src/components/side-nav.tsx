@@ -8,17 +8,32 @@ import { usePathname } from 'next/navigation';
 import { SIDENAV_ITEMS } from '../styles/constants';
 import { SideNavItem} from '../styles/types';
 import { Icon } from '@iconify/react';
+import { useSession } from 'next-auth/react';
+
 
 const SideNav = () =>{
+  const { data: session } = useSession();
     return (
-        <div className="md:w-60 bg-white h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
+        <div className="md:w-60 bg-minha-cor h-screen flex-1 fixed border-r border-black hidden md:flex">
           <div className="flex flex-col space-y-6 w-full">
             <Link
               href="/"
-              className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-12 w-full"
+              className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6  h-12 w-full"
             >
-              <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
-              <span className="font-bold text-xl hidden md:flex">Logo</span>
+              <h1 className='text-black font-sans'>Olá, <span className=' font-sans font-bold'>{session?.user?.name ?? 'Visitante'}</span></h1>
+              {session?.user?.image ? (
+            
+            <img
+              src={session.user.image}
+              alt="User Avatar"
+              className="h-10 w-10 rounded-full border-2 border-black"
+            />
+          ) : (
+            // Exibe o fallback "HQ" se a imagem não estiver disponível
+            <div className="h-8 w-8 rounded-full bg-zinc-300 flex items-center justify-center text-center">
+              <span className="text-black font-sans">HQ</span>
+            </div>
+          )}
             </Link>
     
             <div className="flex flex-col space-y-2  md:px-6 ">
@@ -47,13 +62,13 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
           <>
             <button
               onClick={toggleSubMenu}
-              className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:bg-zinc-100 ${
-                pathname.includes(item.path) ? 'bg-zinc-100' : ''
+              className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between border-2 border-black hover:bg-minha-verde hover:border-black ${
+                pathname.includes(item.path) ? 'bg-minha-verde' : ''
               }`}
             >
               <div className="flex flex-row space-x-4 items-center">
                 {item.icon}
-                <span className="font-semibold text-xl  flex">{item.title}</span>
+                <span className="text-black font-sans  flex">{item.title}</span>
               </div>
   
               <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
@@ -62,7 +77,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
             </button>
   
             {subMenuOpen && (
-              <div className="my-2 ml-12 flex flex-col space-y-4">
+              <div className="my-2 ml-12 flex flex-col space-y-4 ">
                 {item.subMenuItems?.map((subItem, idx) => {
                   return (
                     <Link
@@ -82,12 +97,12 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
         ) : (
           <Link
             href={item.path}
-            className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-zinc-100 ${
-              item.path === pathname ? 'bg-zinc-100' : ''
+            className={`flex flex-row space-x-4 items-center p-2 rounded-lg border-2 border-black hover:bg-minha-verde hover:border-black  ${
+              item.path === pathname ? 'bg-minha-verde' : ''
             }`}
           >
             {item.icon}
-            <span className="font-semibold text-xl flex">{item.title}</span>
+            <span className="text-black font-sans">{item.title}</span>
           </Link>
         )}
       </div>
