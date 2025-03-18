@@ -55,6 +55,14 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
     const toggleSubMenu = () => {
       setSubMenuOpen(!subMenuOpen);
     };
+
+const handleReload = (event: React.MouseEvent, path: string) => {
+
+  setTimeout(() => {
+    window.location.href = path; // Navega para a nova página
+    window.location.reload(); // Recarrega a página
+  }, 50); // Aguarda 3 segundos (3000ms) antes de recarregar
+};
   
     return (
       <div className="">
@@ -100,6 +108,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
             className={`flex flex-row space-x-4 items-center p-2 rounded-lg border-2 border-black hover:bg-minha-verde hover:border-black  ${
               item.path === pathname ? 'bg-minha-verde' : ''
             }`}
+            onClick={(e) => handleReload(e, item.path)}
           >
             {item.icon}
             <span className="text-black font-sans">{item.title}</span>

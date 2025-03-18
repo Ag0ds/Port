@@ -21,7 +21,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
   },
   {
     title: 'Mensagens',
-    path: '/messages',
+    path: '/Contatos',
     icon: <Icon icon="lucide:mail" width="24" height="24" />,
   },
   {
@@ -35,8 +35,8 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     ],
   },
   {
-    title: 'Sobre',
-    path: '/help',
+    title: 'Sobre mim',
+    path: '/Contatos',
     icon: <Icon icon="lucide:help-circle" width="24" height="24" />,
   },
 ];

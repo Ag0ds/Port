@@ -2,7 +2,6 @@
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { LogOutBtn } from "@/components/LogOutBtn";
-import Image from "next/image";
 import "./lobby.css";
 import React from "react";
 
