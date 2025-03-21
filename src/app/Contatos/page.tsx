@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="relative z-10">
       <AnimatedBackground />
       <div className="">
         <a href="https://github.com/Ag0ds" target="_blank" rel="noopener noreferrer">

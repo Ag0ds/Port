@@ -14,7 +14,7 @@ import { useSession } from 'next-auth/react';
 const SideNav = () =>{
   const { data: session } = useSession();
     return (
-        <div className="md:w-60 bg-minha-cor h-screen flex-1 fixed border-r border-black hidden md:flex">
+        <div className="md:w-60 bg-red-400 h-screen flex-1 fixed border-r border-black hidden md:flex">
           <div className="flex flex-col space-y-6 w-full">
             <Link
               href="/"
@@ -61,7 +61,7 @@ const handleReload = (event: React.MouseEvent, path: string) => {
   setTimeout(() => {
     window.location.href = path; // Navega para a nova página
     window.location.reload(); // Recarrega a página
-  }, 50); // Aguarda 3 segundos (3000ms) antes de recarregar
+  }, 60);
 };
   
     return (
@@ -70,8 +70,8 @@ const handleReload = (event: React.MouseEvent, path: string) => {
           <>
             <button
               onClick={toggleSubMenu}
-              className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between border-2 border-black hover:bg-minha-verde hover:border-black ${
-                pathname.includes(item.path) ? 'bg-minha-verde' : ''
+              className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between border-2 border-black hover:bg-transparent hover:border-minha-cor ${
+                pathname.includes(item.path) ? 'bg-minha-cor' : ''
               }`}
             >
               <div className="flex flex-row space-x-4 items-center">
@@ -105,8 +105,8 @@ const handleReload = (event: React.MouseEvent, path: string) => {
         ) : (
           <Link
             href={item.path}
-            className={`flex flex-row space-x-4 items-center p-2 rounded-lg border-2 border-black hover:bg-minha-verde hover:border-black  ${
-              item.path === pathname ? 'bg-minha-verde' : ''
+            className={`flex flex-row space-x-4 items-center p-2 rounded-lg border-2 border-black hover:bg-transparent hover:border-minha-cor  ${
+              item.path === pathname ? 'bg-minha-cor' : ''
             }`}
             onClick={(e) => handleReload(e, item.path)}
           >

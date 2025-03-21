@@ -24,7 +24,7 @@ const Header = () => {
             },
           )}
         >
-          <div className="flex h-[47px] bg-minha-cor items-center justify-between px-4">
+          <div className="flex h-[47px] bg-red-400 items-center justify-between px-4">
             <div className="flex items-center space-x-4">
               <Link
                 href="/"

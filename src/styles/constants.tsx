@@ -9,7 +9,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     icon: <Icon icon="lucide:home" width="24" height="24" />,
   },
   {
-    title: 'Dashboard',
+    title: 'Repositórios',
     path: '/dashboard',
     icon: <Icon icon="lucide:folder" width="24" height="24" />,
     submenu: true,
